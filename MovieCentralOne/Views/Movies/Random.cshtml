@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MovieCentralOne.Models.Movie>
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Movies</h2>
+
+@*
+
+        This is a comment
+
+
+
+        @{
+            var className = Model.Customers.Count > 5 ? "popular" : null;
+        }
+        <h2 class="@className" style="color: red">@Model.Movie.Name</h2>
+
+
+
+    @if (Model.Customers.Count == 1)
+    {
+        <text> No one has rented this movie. </text>
+    }
+
+*@
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+            {
+                 <tr>
+                     <td>@Html.ActionLink(movie.Name,"Edit", "Movies", new { id = movie.Id }, null)</td>
+                     <td>@movie.Genre.Name</td>
+                 </tr>
+
+             }
+
+    </tbody>
+
+</table>
+
+

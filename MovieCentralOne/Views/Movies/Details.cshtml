@@ -1,0 +1,27 @@
+﻿@model MovieCentralOne.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Movie Details</h2>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th>Released Date</th>
+            <th>Date Added</th>
+            <th>Number in Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.ReleaseDate</td>
+            <td>@Model.DateAdded</td>
+            <td>@Model.NumberInStock</td>
+        </tr>
+    </tbody>
+</table>
